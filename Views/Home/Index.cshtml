@@ -1,0 +1,93 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="alert alert-info" role="alert">
+    <h5>Upload a short text file and use AI to test your reading comprehension.</h5>
+
+</div>
+<!-- File upload form -->
+<form class="form-floating" asp-action="UploadFile" method="post" enctype="multipart/form-data">
+    <input type="file" class="form-control" id="fileUpload" name="uploadedFile">
+    <label for="fileUpload">Upload your test file</label>
+    <button type="submit" class="btn btn-primary">Upload File</button>
+</form>
+
+<!-- Display file content and 'Analyze' button -->
+@if (ViewBag.FileText != null)
+{
+    <div class="alert alert-info" role="alert">
+        <h5>File Content:</h5>
+        <pre style="max-height: 200px; overflow-y: auto; white-space: pre-wrap;">@ViewBag.FileText</pre>
+
+        <!-- Form for 'Analyze' button -->
+        <form asp-action="AnalyzeFile" method="post">
+            <!-- Hidden input to pass file content as the 'question' -->
+            <input type="hidden" name="question" value="@ViewBag.FileText" />
+            <button type="submit" class="btn btn-secondary">Generate Comprehension Question Based On The Text</button>
+        </form>
+    </div>
+}
+
+<!-- Display generated comprehension question -->
+@if (ViewBag.GeneratedQuestion != null)
+{
+    <div class="alert alert-warning" role="alert">
+        <h5>Generated Comprehension Question:</h5>
+        <p>@ViewBag.GeneratedQuestion</p>
+    </div>
+}
+
+<!-- Display generated answer -->
+@if (ViewBag.GeneratedAnswer != null)
+{
+    <div class="alert alert-success" role="alert" style="display:none;">
+        <h5>Generated Answer:</h5>
+        <p>@ViewBag.GeneratedAnswer</p>
+    </div>
+}
+
+<!-- User input for their own answer -->
+@if (ViewBag.GeneratedQuestion != null)
+{
+    <div class="alert alert-secondary" role="alert">
+        <h5>Your Answer:</h5>
+
+        <!-- Form for the user to submit their answer -->
+        <form asp-action="SubmitUserAnswer" method="post">
+            <textarea class="form-control" name="userAnswer" rows="4" placeholder="Write your answer here..."></textarea>
+            <button type="submit" class="btn btn-primary mt-2">Submit Your Answer</button>
+        </form>
+    </div>
+}
+
+<!-- Display user's submitted answer -->
+@if (ViewBag.UserAnswer != null)
+{
+    <div class="alert alert-info" role="alert">
+        <h5>Your Submitted Answer:</h5>
+        <p>@ViewBag.UserAnswer</p>
+    </div>
+}
+
+@if (ViewBag.Assessment != null)
+{
+    <div class="alert alert-info" role="alert">
+        <h5>Comprehension Assessment:</h5>
+        <p>@ViewBag.Assessment</p>
+    </div>
+}
+
+
+
+
+<!-- Add the script to validate file upload -->
+<script>
+    document.querySelector('form').addEventListener('submit', function (e) {
+        var fileInput = document.getElementById('fileUpload');
+        if (!fileInput.files || fileInput.files.length === 0) {
+            e.preventDefault(); // Prevent form submission
+            alert('Please choose a file before uploading.');
+        }
+    });
+</script>

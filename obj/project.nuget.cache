@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "lUBigsPlTUQ=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\jesgi\\source\\repos\\BetterHumans\\BetterHumans\\BetterHumans.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jesgi\\.nuget\\packages\\groqsharp\\1.1.2\\groqsharp.1.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}

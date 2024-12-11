@@ -1,0 +1,8 @@
+C:\Users\jesgi\source\repos\BetterHumans\BetterHumans\obj\Release\net8.0\PubTmp\Out\BetterHumans.exe
+C:\Users\jesgi\source\repos\BetterHumans\BetterHumans\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
+C:\Users\jesgi\source\repos\BetterHumans\BetterHumans\obj\Release\net8.0\PubTmp\Out\appsettings.json
+C:\Users\jesgi\source\repos\BetterHumans\BetterHumans\obj\Release\net8.0\PubTmp\Out\BetterHumans.dll
+C:\Users\jesgi\source\repos\BetterHumans\BetterHumans\obj\Release\net8.0\PubTmp\Out\BetterHumans.deps.json
+C:\Users\jesgi\source\repos\BetterHumans\BetterHumans\obj\Release\net8.0\PubTmp\Out\BetterHumans.runtimeconfig.json
+C:\Users\jesgi\source\repos\BetterHumans\BetterHumans\obj\Release\net8.0\PubTmp\Out\BetterHumans.pdb
+C:\Users\jesgi\source\repos\BetterHumans\BetterHumans\obj\Release\net8.0\PubTmp\Out\GroqSharp.dll
